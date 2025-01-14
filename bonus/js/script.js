@@ -83,8 +83,18 @@ button.addEventListener('click', (event) => {
 
     //condizione per l'esito
 
+    //condizione che avvisa l'utente se ha inserito caratteri invalidi o numeri uguali
+    if (typeof valore !== "number" || typeof valore.includes(valoriInseriti)) {
+        alert("Hai inserito caratteri invalidi o numeri uguali");
+        //cambio il messaggio dell'esito
+        button.innerHTML = "Riprova";
+        //cambio il colore del messaggio in blu
+        esito.className = "hide";
+    }
+        
+
     //se tutti i numeri dei due array corrispondono
-    if (numeriIndovinati.length === numeriRandom.length) {
+    else if (numeriIndovinati.length === numeriRandom.length) {
         //cambia colore messaggio in verde
         esito.className = 'text-success text-center';
         //modifica il messaggio
@@ -96,7 +106,7 @@ button.addEventListener('click', (event) => {
         esito.className = 'text-warning text-center';
         //dichiara quanti e quali numeri sono stati indovinati e li converto in stringa con join
         esito.innerHTML = `Numeri indovinati: ${numeriIndovinati.length} (${numeriIndovinati.join(", ")})`;
-
+        
         //se non è stato indovinato nessun numero
     } else {
         //cambia colore messaggio in rosso
