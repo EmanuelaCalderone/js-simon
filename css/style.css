@@ -1,0 +1,27 @@
+/* Generics */
+
+/* # COUNTDOWN */
+
+#countdown {
+	font-weight: bolder;
+	font-size: 5rem;
+}
+
+/* #NUMBERS */
+#numbers-list {
+	font-size: 3rem;
+}
+
+input {
+	width: 80px !important;
+}
+
+/*classe per far scomparire i numeri*/
+.hide{
+	display:none;
+}
+
+/*classe per far apparire i campi per gli input*/
+.show{
+	display:block;
+}
